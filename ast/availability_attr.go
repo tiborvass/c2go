@@ -1,6 +1,8 @@
 package ast
 
 import (
+	"strings"
+
 	"github.com/elliotchance/c2go/util"
 )
 
@@ -18,6 +20,7 @@ type AvailabilityAttr struct {
 	Message2      string
 	IsInherited   bool
 	ChildNodes    []Node
+	Priority      int
 }
 
 func parseAvailabilityAttr(line string) *AvailabilityAttr {
@@ -30,7 +33,8 @@ func parseAvailabilityAttr(line string) *AvailabilityAttr {
 		 (?P<unknown2>[\d.]+)
 		(?P<unavalable> Unavailable)?
 		 "(?P<message1>.*?)"
-		(?P<message2> ".*?")?`,
+		(?P<message2> ".*?")?
+		(?P<priority> \d+)?`,
 		line,
 	)
 
@@ -46,6 +50,7 @@ func parseAvailabilityAttr(line string) *AvailabilityAttr {
 		Message2:      removeQuotes(groups["message2"]),
 		IsInherited:   len(groups["inherited"]) > 0,
 		ChildNodes:    []Node{},
+		Priority:      util.Atoi(strings.TrimSpace(groups["priority"])),
 	}
 }
 
