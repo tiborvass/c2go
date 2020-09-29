@@ -413,6 +413,8 @@ func setPosition(node Node, position Position) {
 		n.Pos = position
 	case *WeakAttr:
 		n.Pos = position
+	case *WeakImportAttr:
+		n.Pos = position
 	case *WhileStmt:
 		n.Pos = position
 	case *TypedefType, *Typedef, *TranslationUnitDecl, *RecordType, *Record,

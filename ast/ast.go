@@ -292,6 +292,8 @@ func Parse(fullline string) Node {
 		return parseWarnUnusedResultAttr(line)
 	case "WeakAttr":
 		return parseWeakAttr(line)
+	case "WeakImportAttr":
+		return parseWeakImportAttr(line)
 	case "WhileStmt":
 		return parseWhileStmt(line)
 	case "NullStmt":
