@@ -34,6 +34,9 @@ func Ucfirst(word string) string {
 // Atoi converts a string to an integer in cases where we are sure that s will
 // be a valid integer, otherwise it will panic.
 func Atoi(s string) int {
+	if s == "" {
+		return 0
+	}
 	i, err := strconv.Atoi(s)
 	PanicOnError(err, "bad integer")
 
