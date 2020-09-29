@@ -184,6 +184,8 @@ func Parse(fullline string) Node {
 		return parseIncompleteArrayType(line)
 	case "IndirectFieldDecl":
 		return parseIndirectFieldDecl(line)
+	case "IndirectGotoStmt":
+		return parseIndirectGotoStmt(line)
 	case "InitListExpr":
 		return parseInitListExpr(line)
 	case "InlineCommandComment":

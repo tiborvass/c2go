@@ -323,6 +323,8 @@ func setPosition(node Node, position Position) {
 		n.Pos = position
 	case *IndirectFieldDecl:
 		n.Pos = position
+	case *IndirectGotoStmt:
+		n.Pos = position
 	case *InitListExpr:
 		n.Pos = position
 	case *InlineCommandComment:
