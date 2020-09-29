@@ -257,6 +257,8 @@ func setPosition(node Node, position Position) {
 		n.Pos = position
 	case *CharacterLiteral:
 		n.Pos = position
+	case *ColdAttr:
+		n.Pos = position
 	case *CompoundStmt:
 		n.Pos = position
 	case *ConditionalOperator:

@@ -100,6 +100,8 @@ func Parse(fullline string) Node {
 		return parseCaseStmt(line)
 	case "CharacterLiteral":
 		return parseCharacterLiteral(line)
+	case "ColdAttr":
+		return parseColdAttr(line)
 	case "CompoundLiteralExpr":
 		return parseCompoundLiteralExpr(line)
 	case "CompoundStmt":
