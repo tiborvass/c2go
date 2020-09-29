@@ -204,6 +204,8 @@ func Parse(fullline string) Node {
 		return parseModeAttr(line)
 	case "NoAliasAttr":
 		return parseNoAliasAttr(line)
+	case "NoEscapeAttr":
+		return parseNoEscapeAttr(line)
 	case "NoInlineAttr":
 		return parseNoInlineAttr(line)
 	case "NoThrowAttr":
